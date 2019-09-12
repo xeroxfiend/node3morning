@@ -15,6 +15,8 @@ app.put('/api/person/:id', ctrl.updateLastName)
 
 app.delete('/api/person/:id', ctrl.delete)
 
+app.get('/api/person/:id', ctrl.getOnePerson)
+
 massive(CONNECTION_STRING).then(db => {
     app.set('db', db)
     console.log('connected to db')

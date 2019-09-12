@@ -31,5 +31,13 @@ module.exports = {
     db.delete([id]).then(result => {
       res.status(200).send(result);
     });
+  },
+
+  getOnePerson: async (req, res) => {
+      const db = req.app.get('db')
+      const {id} = req.params
+
+      const result = await db.get_one_person([id])
+      res.status(200).send(result)
   }
 };
